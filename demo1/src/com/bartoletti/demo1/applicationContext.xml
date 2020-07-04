@@ -6,9 +6,19 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    Definition of the bean-->
     <bean id="myFortune" class="com.bartoletti.demo1.Fortune.HappyFortuneService"/>
+
+    <!--    Definition of the bean-->
     <bean id="myCoach" class="com.bartoletti.demo1.coach.BaseballCoach">
         <!-- constructor injection -->
         <constructor-arg ref="myFortune"/>
+    </bean>
+
+    <!--    Definition of the bean-->
+    <bean id="myCricketCoach" class="com.bartoletti.demo1.coach.CricketCoach">
+        <!--   Injecting the the bean myFortune in the property "fortuneService"-->
+        <property name="fortuneService" ref="myFortune"/>
     </bean>
 </beans>
