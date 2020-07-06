@@ -10,7 +10,7 @@ public class annotationDemoApp {
         ClassPathXmlApplicationContext context = new
                 ClassPathXmlApplicationContext("com\\bartoletti\\demoAnnotations\\applicationContext.xml");
         // get beans
-        ICoach myFamosoCoach = context.getBean("elFamosoTennisCoach", ICoach.class);
+        ICoach myFamosoCoach = context.getBean("tennisCoach", ICoach.class);
         // call method
         System.out.println(myFamosoCoach.getDailyWorkOut());
         // close context

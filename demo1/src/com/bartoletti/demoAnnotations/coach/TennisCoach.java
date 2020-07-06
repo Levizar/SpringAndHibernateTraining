@@ -2,7 +2,7 @@ package com.bartoletti.demoAnnotations.coach;
 
 import org.springframework.stereotype.Component;
 
-@Component("elFamosoTennisCoach")
+@Component
 public class TennisCoach implements ICoach {
     @Override
     public String getDailyWorkOut() {
