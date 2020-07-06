@@ -13,6 +13,7 @@ public class annotationDemoApp {
         ICoach myFamosoCoach = context.getBean("tennisCoach", ICoach.class);
         // call method
         System.out.println(myFamosoCoach.getDailyWorkOut());
+        System.out.println(myFamosoCoach.getDailyFortune());
         // close context
         context.close();
     }
