@@ -5,7 +5,7 @@ import java.util.Random;
 public class HappyFortuneService implements IFortuneService {
     private final String[] arrayOfFortune = {"Bad day incoming!", "Today sounds like a normal day!", "INCREDIBLE LUCKY AMAZING EXTRAORDINARY DAY!"};
 
-    private Random random;
+    private final Random random = new Random();
     @Override
     public String getFortune() {
         return arrayOfFortune[random.nextInt(arrayOfFortune.length)];
