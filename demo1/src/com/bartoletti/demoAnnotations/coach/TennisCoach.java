@@ -2,18 +2,15 @@ package com.bartoletti.demoAnnotations.coach;
 
 import com.bartoletti.demoAnnotations.service.IFortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements ICoach {
 
-    private final IFortuneService fortuneService;
-
     @Autowired
-    public TennisCoach(IFortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
-
+    @Qualifier("randomFortuneService")
+    private IFortuneService fortuneService;
 
     @Override
     public String getDailyWorkOut() {

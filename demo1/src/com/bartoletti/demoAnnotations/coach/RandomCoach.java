@@ -2,6 +2,7 @@ package com.bartoletti.demoAnnotations.coach;
 
 import com.bartoletti.demoAnnotations.service.IFortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,6 +21,7 @@ public class RandomCoach implements ICoach {
     }
 
     @Autowired
+    @Qualifier("happyFortuneService")
     public void randomMethod(IFortuneService newFortuneService){
         fortuneService = newFortuneService;
     }

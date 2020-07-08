@@ -21,7 +21,7 @@
 
     <!--    Definition of the bean-->
     <bean id="myCricketCoach" class="com.bartoletti.demo1.coach.CricketCoach">
-        <!--   Injecting the the bean myFortune in the property "fortuneService"-->
+        <!--   Injecting the the bean myFortune in the property "happyFortuneService"-->
         <property name="fortuneService" ref="myFortune"/>
         <!--        Injection literal values-->
         <property name="emailAddress" value="${foo.email}"/>
