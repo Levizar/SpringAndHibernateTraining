@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements ICoach {
 
     @Autowired
@@ -15,6 +14,18 @@ public class TennisCoach implements ICoach {
     private IFortuneService fortuneService;
     {
         System.out.println("randomFortuneService was injected into tennis coach by field injection");
+    }
+
+    // Those annotation are part of Java EE and are deprecated
+    // @PostConstruct
+    public void initMethod(){
+        System.out.println(">> TennisCoach: initMethod");
+    }
+
+    // Those annotation are part of Java EE and are deprecated
+    // @PreDestroy
+    public void preDestroyMethod(){
+        System.out.println(">> TennisCoach: preDestroyMethod");
     }
 
     @Override
