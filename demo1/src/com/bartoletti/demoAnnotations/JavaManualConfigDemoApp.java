@@ -3,16 +3,16 @@ package com.bartoletti.demoAnnotations;
 import com.bartoletti.demoAnnotations.coach.ICoach;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class JavaConfigDemoApp {
+public class JavaManualConfigDemoApp {
     public static void main(String[] args) {
         // Read config from the java config class
         AnnotationConfigApplicationContext context = new
-                AnnotationConfigApplicationContext(SportComponentScanConfig.class);
+                AnnotationConfigApplicationContext(SportManualConfig.class);
         // get beans
-        ICoach myFamosoCoach = context.getBean("tennisCoach", ICoach.class);
+        ICoach swimCoach = context.getBean("swimCoach", ICoach.class);
         // call method
-        System.out.println(myFamosoCoach.getDailyWorkOut());
-        System.out.println(myFamosoCoach.getDailyFortune());
+        System.out.println(swimCoach.getDailyWorkOut());
+        System.out.println(swimCoach.getDailyFortune());
         // close context
         context.close();
     }
